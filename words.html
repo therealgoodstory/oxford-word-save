@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мои слова — Oxford Word Saver</title>
+  <link rel="stylesheet" href="words.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Мои слова <span id="count" class="count"></span></h1>
+    <button id="open-full" class="link-btn popup-only" type="button">Открыть на всю страницу ↗</button>
+  </header>
+
+  <section class="toolbar">
+    <input id="search" type="search" placeholder="Поиск по слову или определению…" autocomplete="off">
+    <select id="sort" aria-label="Сортировка">
+      <option value="new">Сначала новые</option>
+      <option value="old">Сначала старые</option>
+      <option value="az">А → Я (A–Z)</option>
+    </select>
+  </section>
+
+  <section class="toolbar player">
+    <select id="mode" aria-label="Что проигрывать">
+      <option value="uk">UK</option>
+      <option value="us">US</option>
+      <option value="both">UK → US</option>
+    </select>
+    <button id="play-all" type="button" class="primary">▶ Проиграть всё</button>
+  </section>
+
+  <main id="list" aria-live="polite"></main>
+
+  <footer class="bottom full-only">
+    <button id="export" type="button">Экспорт JSON</button>
+    <button id="import" type="button">Импорт JSON</button>
+    <input id="import-file" type="file" accept="application/json,.json" hidden>
+    <span id="status" class="status" role="status"></span>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="words.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+.oxs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+  padding: 4px 12px;
+  font: 600 13px/1.4 -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #1a3a6e;
+  background: #fff;
+  border: 1.5px solid #1a3a6e;
+  border-radius: 999px;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background 0.15s, color 0.15s;
+}
+.oxs-btn:hover { background: #eef3fb; }
+.oxs-btn.oxs-saved {
+  color: #fff;
+  background: #1a3a6e;
+}
+.oxs-btn.oxs-saved:hover { background: #12305c; }
+.oxs-btn:focus-visible { outline: 3px solid #f2b705; outline-offset: 2px; }
