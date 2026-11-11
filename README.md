@@ -1,29 +1,29 @@
-# Oxford Word Saver (MVP)
+> Writing a browser extension by hand in 2025 is practically a war crime.
+> This one was vibe-coded with [Claude Code](https://claude.com/claude-code).
 
-Расширение для oxfordlearnersdictionaries.com (Firefox/Zen и Chrome):
+# Oxford Word Saver
 
-- убирает рекламу, cookie-баннер и модальные окна, возвращает прокрутку страницы;
-- кнопка «☆ Сохранить» рядом с заголовком слова сохраняет слово, транскрипцию, **аудио UK и US**, первое определение и пример;
-- иконка расширения открывает список слов: поиск, сортировка, прослушивание UK/US, «Проиграть всё» (UK, US или UK→US), экспорт/импорт JSON.
+A Firefox/Chrome extension for [oxfordlearnersdictionaries.com](https://www.oxfordlearnersdictionaries.com):
 
-## Установка
+- **Save** button next to the word heading — saves the word, transcription, UK/US audio, first definition and example
+- Extension icon opens your word list: search, sort, play UK/US pronunciation, **Play All** (UK, US or UK→US), JSON export/import
 
-**Zen / Firefox (временная, до перезапуска браузера):**
-1. Откройте `about:debugging#/runtime/this-firefox`
-2. «Load Temporary Add-on…» → выберите `manifest.json` из этой папки.
+## Installation
 
-Для постоянной установки расширение нужно подписать на addons.mozilla.org (бесплатно, режим «On your own / unlisted»).
+**Firefox / Zen (temporary, until browser restart):**
+1. Open `about:debugging#/runtime/this-firefox`
+2. "Load Temporary Add-on…" → select `manifest.json`
 
 **Chrome:**
-1. `chrome://extensions` → включите «Режим разработчика»
-2. «Загрузить распакованное расширение» → выберите эту папку.
-   (Предупреждение про ключ `browser_specific_settings` можно игнорировать: он нужен только Firefox.)
+1. `chrome://extensions` → enable "Developer mode"
+2. "Load unpacked" → select this folder
+   (Ignore the `browser_specific_settings` warning — it's Firefox-only)
 
-## Данные
+## Data
 
-Слова хранятся локально (`storage.local`) в самом браузере; аудио хранятся как ссылки на сайт Oxford.
-Для переноса между Zen и Chrome и для резервной копии: «Экспорт JSON» / «Импорт JSON» на полной странице списка (кнопка «Открыть на всю страницу» в popup).
+Words are stored locally in `storage.local`. Audio is stored as links to Oxford's servers.
+To transfer between browsers or make a backup: use **Export JSON / Import JSON** on the full page (click "Open full page" in the popup).
 
-## Если после обновления сайта что-то вернулось
+## If something breaks after a site update
 
-Реклама скрывается селекторами в `hide.css`, модалки ловит `cleaner.js`. Если появится новый рекламный блок, добавьте его селектор в `hide.css`.
+The save button reads Oxford's DOM selectors — if the site restructures, check `saver.js`.
